@@ -77,7 +77,7 @@ fn main() -> Result<()> {
                                         println!("Launching terminal running test command...");
                                         Command::new("sh")
                                             .arg("-c")
-                                            .arg("")
+                                            .arg("fastfetch")
                                             .spawn()
                                             .expect("error");
                                     }
