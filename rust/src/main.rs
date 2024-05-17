@@ -28,7 +28,7 @@ fn main() -> Result<()> {
             let area = frame.size();
             let chunks = Layout::default()
                 .direction(Direction::Horizontal)
-                .constraints([Constraint::Length(items.len() as u16 + 1), Constraint::Min(0)])
+                .constraints([Constraint::Length(20), Constraint::Min(0)])
                 .split(area);
             let list = List::new(items)
                 .block(Block::default().title("Menu").borders(Borders::ALL))
@@ -42,7 +42,7 @@ fn main() -> Result<()> {
             // Render the list and a paragraph widget.
             frame.render_stateful_widget(list, area, &mut state);
             frame.render_widget(
-                Paragraph::new("Press 'q' to quit")
+                Paragraph::new("Menu")
                     .style(Style::default().bg(Color::DarkGray).fg(Color::White).add_modifier(Modifier::BOLD)),
                 chunks[0],
             );
